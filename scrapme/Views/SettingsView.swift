@@ -62,6 +62,13 @@ struct GeneralSettingsView: View {
                 .disabled(!manager.autoUpdateEnabled)
             }
             
+            Section("Supabase") {
+                Toggle("Upload vers Supabase", isOn: $manager.uploadToSupabase)
+                Text("Synchronise les événements avec votre base Supabase après chaque scrape.")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+            
             Section {
                 HStack {
                     Text("Dernière mise à jour")

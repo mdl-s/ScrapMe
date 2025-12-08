@@ -18,6 +18,19 @@ final class ScrapingManager: ObservableObject {
     @Published private(set) var isLoading = false
     @Published private(set) var error: String?
     @Published private(set) var status: Status = .idle
+    @Published private(set) var lastScrapedPeriod: ScrapePeriod = .week
+    
+    enum ScrapePeriod: String, CaseIterable {
+        case today = "Aujourd'hui"
+        case week = "Semaine"
+        
+        var apiValue: ForexFactoryScraper.Period {
+            switch self {
+            case .today: return .today
+            case .week: return .week
+            }
+        }
+    }
     
     // MARK: - Settings
     @Published var autoUpdateEnabled = true {
@@ -37,6 +50,12 @@ final class ScrapingManager: ObservableObject {
             if autoUpdateEnabled {
                 startAutoUpdate()
             }
+        }
+    }
+    
+    @Published var uploadToSupabase = true { // Activé par défaut - upload direct vers Supabase
+        didSet {
+            UserDefaults.standard.set(uploadToSupabase, forKey: "uploadToSupabase")
         }
     }
     
@@ -78,9 +97,22 @@ final class ScrapingManager: ObservableObject {
     }
     
     private func loadSettings() {
-        autoUpdateEnabled = UserDefaults.standard.bool(forKey: "autoUpdateEnabled")
+        // Auto-update: default true si jamais défini
+        if UserDefaults.standard.object(forKey: "autoUpdateEnabled") == nil {
+            autoUpdateEnabled = true
+        } else {
+            autoUpdateEnabled = UserDefaults.standard.bool(forKey: "autoUpdateEnabled")
+        }
+        
         let savedInterval = UserDefaults.standard.double(forKey: "updateInterval")
         updateInterval = savedInterval > 0 ? savedInterval : 3600
+        
+        // Upload Supabase: default true si jamais défini
+        if UserDefaults.standard.object(forKey: "uploadToSupabase") == nil {
+            uploadToSupabase = true
+        } else {
+            uploadToSupabase = UserDefaults.standard.bool(forKey: "uploadToSupabase")
+        }
     }
     
     // MARK: - Public Methods
@@ -95,23 +127,26 @@ final class ScrapingManager: ObservableObject {
         }
     }
     
-    func scrapeAndUpdate() async {
+    func scrapeAndUpdate(period: ScrapePeriod = .week) async {
         guard !isLoading else { return }
         
         isLoading = true
         error = nil
         status = .scraping
+        lastScrapedPeriod = period
         
         do {
             // 1. Scrape Forex Factory
-            let scrapedEvents = try await scraper.scrapeCalendar(period: .week)
+            let scrapedEvents = try await scraper.scrapeCalendar(period: period.apiValue)
             events = scrapedEvents
             
             print("[Manager] Scraped \(scrapedEvents.count) events")
             
-            // 2. Trigger Supabase Edge function update
-            status = .uploading
-            try await supabase.triggerCalendarUpdate()
+            // 2. Upload direct vers Supabase
+            if uploadToSupabase {
+                status = .uploading
+                try await supabase.uploadEvents(scrapedEvents)
+            }
             
             // 3. Success
             lastUpdate = Date()
@@ -135,15 +170,16 @@ final class ScrapingManager: ObservableObject {
         isLoading = false
     }
     
-    func scrapeOnly() async {
+    func scrapeOnly(period: ScrapePeriod = .week) async {
         guard !isLoading else { return }
         
         isLoading = true
         error = nil
         status = .scraping
+        lastScrapedPeriod = period
         
         do {
-            let scrapedEvents = try await scraper.scrapeCalendar(period: .week)
+            let scrapedEvents = try await scraper.scrapeCalendar(period: period.apiValue)
             events = scrapedEvents
             lastUpdate = Date()
             status = .success

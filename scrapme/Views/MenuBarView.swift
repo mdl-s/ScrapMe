@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MenuBarView: View {
     @EnvironmentObject var manager: ScrapingManager
+    @State private var selectedPeriod: ScrapingManager.ScrapePeriod = .week
+    @State private var showingEventsList = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -22,6 +24,34 @@ struct MenuBarView: View {
                 StatusBadge(status: manager.status)
             }
             .padding(.bottom, 4)
+            
+            Divider()
+            
+            // Period Picker
+            HStack {
+                Text("Période:")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                
+                Picker("", selection: $selectedPeriod) {
+                    ForEach(ScrapingManager.ScrapePeriod.allCases, id: \.self) { period in
+                        Text(period.rawValue).tag(period)
+                    }
+                }
+                .pickerStyle(.segmented)
+                .frame(width: 180)
+                
+                Spacer()
+                
+                // Current period badge
+                Text(manager.lastScrapedPeriod.rawValue)
+                    .font(.caption2)
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 2)
+                    .background(Color.blue.opacity(0.2))
+                    .foregroundStyle(.blue)
+                    .clipShape(Capsule())
+            }
             
             Divider()
             
@@ -44,6 +74,24 @@ struct MenuBarView: View {
                     icon: "sun.max.fill",
                     color: .orange
                 )
+            }
+            
+            // View all events button
+            Button {
+                showingEventsList = true
+            } label: {
+                HStack {
+                    Text("Voir tous les événements")
+                    Spacer()
+                    Image(systemName: "arrow.up.right.square")
+                }
+                .font(.caption)
+                .foregroundStyle(.blue)
+            }
+            .buttonStyle(.plain)
+            .popover(isPresented: $showingEventsList) {
+                EventsListView()
+                    .environmentObject(manager)
             }
             
             Divider()
@@ -76,7 +124,7 @@ struct MenuBarView: View {
             HStack(spacing: 8) {
                 Button {
                     Task {
-                        await manager.scrapeAndUpdate()
+                        await manager.scrapeAndUpdate(period: selectedPeriod)
                     }
                 } label: {
                     Label("Actualiser", systemImage: "arrow.clockwise")
@@ -87,7 +135,7 @@ struct MenuBarView: View {
                 
                 Button {
                     Task {
-                        await manager.scrapeOnly()
+                        await manager.scrapeOnly(period: selectedPeriod)
                     }
                 } label: {
                     Label("Scrape", systemImage: "doc.text.magnifyingglass")
