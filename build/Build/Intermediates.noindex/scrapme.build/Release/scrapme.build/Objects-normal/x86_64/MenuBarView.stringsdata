@@ -1,0 +1,88 @@
+{
+  "source": "/Users/michael/dev/scrapme/scrapme/scrapme/Views/MenuBarView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "High Impact - Aujourd'hui",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 101
+        }
+      },
+      {
+        "comment": "",
+        "key": "ScrapMe",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 21
+        }
+      },
+      {
+        "comment": "",
+        "key": "Période:",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 32
+        }
+      },
+      {
+        "comment": "",
+        "key": "",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 36
+        }
+      },
+      {
+        "comment": "",
+        "key": "Voir tous les événements",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 84
+        }
+      },
+      {
+        "comment": "",
+        "key": "Dernière MàJ: %@",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 116
+        }
+      },
+      {
+        "comment": "",
+        "key": "Actualiser",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 130
+        }
+      },
+      {
+        "comment": "",
+        "key": "Scrape",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 141
+        }
+      },
+      {
+        "comment": "",
+        "key": "Paramètres",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 152
+        }
+      },
+      {
+        "comment": "",
+        "key": "Quitter",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 161
+        }
+      }
+    ]
+  },
+  "version": 1
+}

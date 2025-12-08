@@ -1,0 +1,16 @@
+{
+  "" : {
+    "const-values" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/LRUCache.build/Release/LRUCache.build/Objects-normal/x86_64/LRUCache-primary.swiftconstvalues",
+    "dependencies" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/LRUCache.build/Release/LRUCache.build/Objects-normal/x86_64/LRUCache-primary.d",
+    "diagnostics" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/LRUCache.build/Release/LRUCache.build/Objects-normal/x86_64/LRUCache-primary.dia",
+    "emit-module-dependencies" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/LRUCache.build/Release/LRUCache.build/Objects-normal/x86_64/LRUCache-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/LRUCache.build/Release/LRUCache.build/Objects-normal/x86_64/LRUCache-primary-emit-module.dia",
+    "pch" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/LRUCache.build/Release/LRUCache.build/Objects-normal/x86_64/LRUCache-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/LRUCache.build/Release/LRUCache.build/Objects-normal/x86_64/LRUCache-primary.swiftdeps"
+  },
+  "/Users/michael/dev/scrapme/scrapme/build/SourcePackages/checkouts/LRUCache/Sources/LRUCache.swift" : {
+    "index-unit-output-path" : "/LRUCache.build/Release/LRUCache.build/Objects-normal/x86_64/LRUCache.o",
+    "llvm-bc" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/LRUCache.build/Release/LRUCache.build/Objects-normal/x86_64/LRUCache.bc",
+    "object" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/LRUCache.build/Release/LRUCache.build/Objects-normal/x86_64/LRUCache.o"
+  }
+}

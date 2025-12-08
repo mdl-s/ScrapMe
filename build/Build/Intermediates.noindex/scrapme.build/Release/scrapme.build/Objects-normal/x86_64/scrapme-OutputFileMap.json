@@ -1,0 +1,61 @@
+{
+  "" : {
+    "const-values" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/scrapme-primary.swiftconstvalues",
+    "dependencies" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/scrapme-primary.d",
+    "diagnostics" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/scrapme-primary.dia",
+    "emit-module-dependencies" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/scrapme-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/scrapme-primary-emit-module.dia",
+    "pch" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/scrapme-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/scrapme-primary.swiftdeps"
+  },
+  "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/GeneratedAssetSymbols.o"
+  },
+  "/Users/michael/dev/scrapme/scrapme/scrapme/ContentView.swift" : {
+    "index-unit-output-path" : "/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/ContentView.o",
+    "llvm-bc" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/ContentView.bc",
+    "object" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/ContentView.o"
+  },
+  "/Users/michael/dev/scrapme/scrapme/scrapme/Models/EconomicEvent.swift" : {
+    "index-unit-output-path" : "/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/EconomicEvent.o",
+    "llvm-bc" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/EconomicEvent.bc",
+    "object" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/EconomicEvent.o"
+  },
+  "/Users/michael/dev/scrapme/scrapme/scrapme/Services/ForexFactoryScraper.swift" : {
+    "index-unit-output-path" : "/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/ForexFactoryScraper.o",
+    "llvm-bc" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/ForexFactoryScraper.bc",
+    "object" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/ForexFactoryScraper.o"
+  },
+  "/Users/michael/dev/scrapme/scrapme/scrapme/Services/ScrapingManager.swift" : {
+    "index-unit-output-path" : "/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/ScrapingManager.o",
+    "llvm-bc" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/ScrapingManager.bc",
+    "object" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/ScrapingManager.o"
+  },
+  "/Users/michael/dev/scrapme/scrapme/scrapme/Services/SupabaseService.swift" : {
+    "index-unit-output-path" : "/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/SupabaseService.o",
+    "llvm-bc" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/SupabaseService.bc",
+    "object" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/SupabaseService.o"
+  },
+  "/Users/michael/dev/scrapme/scrapme/scrapme/Views/EventsListView.swift" : {
+    "index-unit-output-path" : "/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/EventsListView.o",
+    "llvm-bc" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/EventsListView.bc",
+    "object" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/EventsListView.o"
+  },
+  "/Users/michael/dev/scrapme/scrapme/scrapme/Views/MenuBarView.swift" : {
+    "index-unit-output-path" : "/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/MenuBarView.o",
+    "llvm-bc" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/MenuBarView.bc",
+    "object" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/MenuBarView.o"
+  },
+  "/Users/michael/dev/scrapme/scrapme/scrapme/Views/SettingsView.swift" : {
+    "index-unit-output-path" : "/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/SettingsView.o",
+    "llvm-bc" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/SettingsView.bc",
+    "object" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/SettingsView.o"
+  },
+  "/Users/michael/dev/scrapme/scrapme/scrapme/scrapmeApp.swift" : {
+    "index-unit-output-path" : "/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/scrapmeApp.o",
+    "llvm-bc" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/scrapmeApp.bc",
+    "object" : "/Users/michael/dev/scrapme/scrapme/build/Build/Intermediates.noindex/scrapme.build/Release/scrapme.build/Objects-normal/x86_64/scrapmeApp.o"
+  }
+}
