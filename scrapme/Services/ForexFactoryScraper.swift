@@ -90,6 +90,7 @@ actor ForexFactoryScraper {
         
         var events: [EconomicEvent] = []
         var currentDate: String?
+        var currentTime: String = "" // Track last seen time for consecutive events
         
         let rows = try calendarTable.select("tr.calendar__row")
         
@@ -103,17 +104,27 @@ actor ForexFactoryScraper {
                     } else {
                         currentDate = dateText
                     }
+                    // Reset time when date changes
+                    currentTime = ""
                 }
             }
             
             guard let date = currentDate, !date.isEmpty else { continue }
             
-            // Get time
+            // Get time - keep track of last seen time for consecutive events at same time
             let timeCell = try row.select("td.calendar__cell.calendar__time").first()
-            let time = try timeCell?.text().trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            let timeText = try timeCell?.text().trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
             
-            // Skip empty time or special events
-            if time.isEmpty || time == "All Day" || time == "Tentative" || time == "Day" {
+            // Update currentTime only if we have a new time value
+            if !timeText.isEmpty {
+                currentTime = timeText
+            }
+            
+            // Use currentTime (which persists across rows with empty time cells)
+            let time = currentTime
+            
+            // Skip only if we truly have no time info and it's not a special event
+            if time.isEmpty {
                 continue
             }
             
